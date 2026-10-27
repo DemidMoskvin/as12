@@ -1,17 +1,30 @@
 #Task 3
 #сортировка выбором, подберу минимальное из тех, что есть, после этого выставлю по порядку
 def my_sort(numbers):
+    """Sort a list in ascending order using selection sort.
+
+    Args:
+        numbers (list): The list of numbers to sort. The list is
+            modified in place.
+
+    Returns:
+        tuple: A tuple containing the sorted list and the number
+            of element comparisons performed.
+    """
     comparisons = 0
     n = len(numbers)
-# после определения минимума, выставим остальное    
+
     for i in range(n):
         smallest = i
+
         for j in range(i + 1, n):
             comparisons += 1
+
             if numbers[j] < numbers[smallest]:
                 smallest = j
+
         numbers[i], numbers[smallest] = numbers[smallest], numbers[i]
-    
+
     return numbers, comparisons
 # списки для проверки метода
 short_l = [5, 2, 9, 1]
